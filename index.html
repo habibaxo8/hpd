@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>عبدالله ❤️</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -17,6 +20,8 @@ body{
     color:white;
     overflow-x:hidden;
 }
+
+/* القلوب المتحركة */
 
 #hearts{
     position:fixed;
@@ -34,11 +39,16 @@ body{
 }
 
 @keyframes float{
+
     to{
         transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
+
 }
+
+
+/* الصفحات */
 
 section{
     min-height:100vh;
@@ -48,16 +58,27 @@ section{
     padding:28px 16px;
 }
 
+
+/* الكارت */
+
 .card{
     width:min(720px,94vw);
     padding:42px 25px;
     text-align:center;
+
     border:1px solid #ffffff25;
+
     background:#ffffff0d;
+
     backdrop-filter:blur(15px);
+
     border-radius:30px;
+
     box-shadow:0 25px 80px #0008;
 }
+
+
+/* النصوص */
 
 .small{
     font-size:17px;
@@ -76,98 +97,414 @@ h2{
     color:#ffd9e9;
 }
 
+.arrow{
+    font-size:35px;
+    margin:10px;
+}
+
+
+/* الزر */
+
 button{
     border:0;
     border-radius:30px;
+
     padding:15px 34px;
+
     background:#ef718f;
     color:white;
+
     font-size:18px;
     font-weight:bold;
+
     cursor:pointer;
+
     box-shadow:0 10px 30px #0005;
+
+    transition:.2s;
+}
+
+button:hover{
+    transform:scale(1.05);
 }
 
 button:active{
     transform:scale(.97);
 }
 
-.arrow{
-    font-size:35px;
-    margin:10px;
-}
 
-#letter{
+/* الصفحة الثانية مخفية في البداية */
+
+#birthday{
     display:none;
 }
 
+
+/* الكعكة */
+
+.cake-area{
+    margin:25px auto 35px;
+    position:relative;
+    width:280px;
+    height:240px;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+}
+
+
+/* الكعكة */
+
+.cake{
+    position:absolute;
+    bottom:20px;
+
+    width:240px;
+    height:100px;
+
+    background:linear-gradient(
+        to bottom,
+        #ff9db6,
+        #d95b7d
+    );
+
+    border-radius:20px 20px 25px 25px;
+
+    box-shadow:
+        0 15px 30px #0007,
+        inset 0 8px 0 #ffffff30;
+}
+
+
+/* طبقة الكريمة */
+
+.cake::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-18px;
+    left:0;
+
+    width:100%;
+    height:35px;
+
+    background:#fff0f5;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 8px 0 #ffffff20;
+}
+
+
+/* الطبقة السفلية */
+
+.cake::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-20px;
+    left:10px;
+
+    width:220px;
+    height:25px;
+
+    background:#a83f62;
+
+    border-radius:50%;
+}
+
+
+/* الشموع */
+
+.candles{
+
+    position:absolute;
+
+    top:45px;
+
+    width:220px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:flex-start;
+
+    z-index:3;
+}
+
+
+.candle{
+
+    position:relative;
+
+    width:18px;
+    height:65px;
+
+    border-radius:5px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #fff 0px,
+            #fff 7px,
+            #ff7197 7px,
+            #ff7197 14px
+        );
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+/* اللهب */
+
+.flame{
+
+    position:absolute;
+
+    width:18px;
+    height:27px;
+
+    top:-29px;
+    left:0;
+
+    font-size:23px;
+
+    animation:flicker .5s infinite alternate;
+
+    filter:drop-shadow(0 0 8px #ff9d00);
+
+}
+
+
+/* حركة اللهب */
+
+@keyframes flicker{
+
+    from{
+        transform:scale(1) rotate(-3deg);
+    }
+
+    to{
+        transform:scale(1.15) rotate(3deg);
+    }
+
+}
+
+
+/* الشمعة بعد الإطفاء */
+
+.candle.off{
+
+    opacity:.55;
+
+    transform:translateY(5px);
+
+}
+
+
+.candle.off .flame{
+
+    display:none;
+
+}
+
+
+/* الدخان */
+
+.smoke{
+
+    display:none;
+
+    position:absolute;
+
+    top:-35px;
+    left:4px;
+
+    font-size:22px;
+
+    animation:smoke 1.2s ease-out forwards;
+}
+
+
+.candle.off .smoke{
+
+    display:block;
+
+}
+
+
+@keyframes smoke{
+
+    from{
+        opacity:.8;
+        transform:translateY(0) scale(.7);
+    }
+
+    to{
+        opacity:0;
+        transform:translateY(-35px) scale(1.4);
+    }
+
+}
+
+
+/* تعليمات الشمع */
+
+.candle-hint{
+
+    font-size:16px;
+    color:#f7cddd;
+
+    margin-top:5px;
+
+    animation:pulse 1.5s infinite;
+}
+
+
+@keyframes pulse{
+
+    0%,100%{
+        opacity:.6;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+
+/* الرسالة بعد إطفاء الشموع */
+
+#wish{
+
+    display:none;
+
+    font-size:23px;
+
+    color:#ffb4c9;
+
+    margin:20px 0;
+
+    animation:fade 1s ease;
+}
+
+
+/* رسالة عيد الميلاد */
+
 .message{
+
     font-size:18px;
+
     line-height:2;
+
     text-align:right;
+
     background:#0003;
+
     padding:23px;
+
     border-radius:22px;
+
+    margin-top:20px;
 }
 
-.memories{
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-    justify-content:center;
-    margin-top:25px;
-}
 
-.photo{
-    width:125px;
-    height:145px;
-    background:#f5e7d9;
-    padding:8px 8px 25px;
-    transform:rotate(-2deg);
-    box-shadow:0 8px 25px #0007;
-}
-
-.photo:nth-child(even){
-    transform:rotate(3deg);
-}
-
-.photo div{
-    height:100%;
-    background:linear-gradient(135deg,#593d50,#b77886);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:34px;
-    color:white;
-}
+/* الملاحظة */
 
 .note{
+
     margin-top:28px;
+
     font-size:25px;
+
     color:#ff9db6;
 }
 
+
+/* إخفاء الرسالة في البداية */
+
+#finalMessage{
+
+    display:none;
+
+}
+
+
+/* ظهور تدريجي */
+
 .fade{
+
     animation:fade 1.1s ease;
 }
 
+
 @keyframes fade{
+
     from{
         opacity:0;
         transform:translateY(25px);
     }
+
     to{
         opacity:1;
         transform:none;
     }
+
 }
+
+
+/* نجوم صغيرة */
+
+.sparkle{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    font-size:20px;
+
+    animation:sparkleAnim 1s ease-out forwards;
+
+    z-index:20;
+}
+
+
+@keyframes sparkleAnim{
+
+    from{
+        opacity:1;
+        transform:scale(.5) translateY(0);
+    }
+
+    to{
+        opacity:0;
+        transform:scale(1.5) translateY(-80px);
+    }
+
+}
+
 </style>
+
 </head>
 
 
 <body>
 
+
+<!-- القلوب -->
+
 <div id="hearts"></div>
+
 
 
 <!-- الصفحة الأولى -->
@@ -180,13 +517,9 @@ button:active{
             ❤️
         </div>
 
-       
-
         <h1>
             عندي حاجة ليك
         </h1>
-
-       
 
         <div class="arrow">
             ↓
@@ -202,9 +535,10 @@ button:active{
 
 
 
-<!-- رسالة عيد الميلاد -->
 
-<section id="letter">
+<!-- صفحة عيد الميلاد -->
+
+<section id="birthday">
 
     <div class="card fade">
 
@@ -217,40 +551,155 @@ button:active{
         </h2>
 
 
-        <div class="message">
+        <!-- منطقة الكعكة -->
 
-            بجد مش عارفة أقولك إيه غير إني مبسوطة إنك في حياتي. ❤️
+        <div class="cake-area">
 
-            <br><br>
 
-           مش بعرف اعبر اوي بس انا بجد بحبك اوي واكتر شخص بحبه في حياتي 
-            ووجودك بيفرق معايا أكتر مما تتخيل.
+            <!-- الشموع -->
 
-            <br><br>
+            <div class="candles">
 
-           دا اول عيد ميلاد ليك واحنا مع بعض يارب نفضل دايما واقدر اديك 
-           الهدية في الحقيقه 
-           يارب نفضل سوا طول العمر يروحي 
 
-            <br><br>
+                <div class="candle" onclick="blowCandle(this)">
 
-           
+                    <div class="flame">
+                        🔥
+                    </div>
 
-            <br><br>
+                    <div class="smoke">
+                        💨
+                    </div>
 
-            <strong>
-                كل سنة وإنت حبيبي،
-                وبحبك أوي ❤️
-            </strong>
+                </div>
 
-       
-        
 
-           
+                <div class="candle" onclick="blowCandle(this)">
 
-        <div class="note">
-            happy birthday, my favorite person ❤️
+                    <div class="flame">
+                        🔥
+                    </div>
+
+                    <div class="smoke">
+                        💨
+                    </div>
+
+                </div>
+
+
+                <div class="candle" onclick="blowCandle(this)">
+
+                    <div class="flame">
+                        🔥
+                    </div>
+
+                    <div class="smoke">
+                        💨
+                    </div>
+
+                </div>
+
+
+                <div class="candle" onclick="blowCandle(this)">
+
+                    <div class="flame">
+                        🔥
+                    </div>
+
+                    <div class="smoke">
+                        💨
+                    </div>
+
+                </div>
+
+
+                <div class="candle" onclick="blowCandle(this)">
+
+                    <div class="flame">
+                        🔥
+                    </div>
+
+                    <div class="smoke">
+                        💨
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- الكعكة -->
+
+            <div class="cake"></div>
+
+
         </div>
+
+
+        <div class="candle-hint">
+            دوس على كل شمعة واطفيها 🕯️❤️
+        </div>
+
+
+        <!-- الأمنية -->
+
+        <div id="wish">
+
+            ✨ أتمنى أمنية قبل ما تطفي آخر شمعة ✨
+
+            <br>
+
+            <span style="font-size:17px">
+                ويارب كل أمنياتك تتحقق ❤️
+            </span>
+
+        </div>
+
+
+
+        <!-- الرسالة النهائية -->
+
+        <div id="finalMessage">
+
+            <div class="message">
+
+                بجد مش عارفة أقولك إيه غير إني مبسوطة إنك في حياتي. ❤️
+
+                <br><br>
+
+                مش بعرف أعبر أوي بس أنا بجد بحبك أوي،
+                وأكتر شخص بحبه في حياتي،
+                ووجودك بيفرق معايا أكتر مما تتخيل.
+
+                <br><br>
+
+                ده أول عيد ميلاد ليك وإحنا مع بعض،
+                يارب نفضل دايمًا مع بعض،
+                وأقدر أديك الهدية في الحقيقة.
+
+                <br><br>
+
+                يارب نفضل سوا طول العمر يا روحي. ❤️
+
+                <br><br>
+
+                <strong>
+                    كل سنة وإنت حبيبي،
+                    وبحبك أوي ❤️
+                </strong>
+
+            </div>
+
+
+            <div class="note">
+
+                happy birthday, my favorite person ❤️
+
+            </div>
+
+        </div>
+
 
     </div>
 
@@ -258,7 +707,13 @@ button:active{
 
 
 
+
 <script>
+
+
+/* =========================
+   القلوب المتحركة
+========================= */
 
 function heart(){
 
@@ -287,12 +742,18 @@ function heart(){
         () => h.remove(),
         9000
     );
+
 }
 
 
 setInterval(heart,450);
 
 
+
+
+/* =========================
+   فتح الهدية
+========================= */
 
 function openGift(){
 
@@ -301,11 +762,13 @@ function openGift(){
         .style.display='none';
 
     document
-        .getElementById('letter')
+        .getElementById('birthday')
         .style.display='flex';
 
 
-    for(let i=0;i<20;i++){
+    /* قلوب كثيرة عند فتح الهدية */
+
+    for(let i=0;i<25;i++){
 
         setTimeout(
             heart,
@@ -322,7 +785,213 @@ function openGift(){
 
 }
 
+
+
+
+/* =========================
+   إطفاء الشمعة
+========================= */
+
+let candlesOff = 0;
+
+
+function blowCandle(candle){
+
+    /* لو الشمعة مطفية بالفعل */
+
+    if(candle.classList.contains('off')){
+        return;
+    }
+
+
+    /* إطفاء الشمعة */
+
+    candle.classList.add('off');
+
+
+    candlesOff++;
+
+
+    /* تأثير نجوم */
+
+    createSparkles(candle);
+
+
+    /* صوت بسيط اختياري */
+
+    playBlowSound();
+
+
+    /* لو كل الشموع اطفأت */
+
+    if(candlesOff === 5){
+
+        setTimeout(showFinalMessage,1000);
+
+    }
+
+}
+
+
+
+
+/* =========================
+   إظهار الرسالة
+========================= */
+
+function showFinalMessage(){
+
+    document
+        .querySelector('.candle-hint')
+        .style.display='none';
+
+
+    document
+        .getElementById('wish')
+        .style.display='block';
+
+
+    setTimeout(()=>{
+
+        document
+            .getElementById('finalMessage')
+            .style.display='block';
+
+
+        for(let i=0;i<40;i++){
+
+            setTimeout(
+                heart,
+                i*50
+            );
+
+        }
+
+    },1800);
+
+}
+
+
+
+
+/* =========================
+   النجوم
+========================= */
+
+function createSparkles(element){
+
+    const rect =
+        element.getBoundingClientRect();
+
+
+    for(let i=0;i<6;i++){
+
+        const sparkle =
+            document.createElement('div');
+
+        sparkle.className='sparkle';
+
+        sparkle.textContent =
+            ['✨','💖','⭐']
+            [Math.floor(Math.random()*3)];
+
+
+        sparkle.style.left =
+            (rect.left + Math.random()*40 - 10)
+            + 'px';
+
+
+        sparkle.style.top =
+            (rect.top + Math.random()*30 - 10)
+            + 'px';
+
+
+        document.body.appendChild(sparkle);
+
+
+        setTimeout(
+            ()=>sparkle.remove(),
+            1000
+        );
+
+    }
+
+}
+
+
+
+
+/* =========================
+   صوت إطفاء بسيط
+========================= */
+
+function playBlowSound(){
+
+    try{
+
+        const AudioContext =
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+        const audio =
+            new AudioContext();
+
+
+        const oscillator =
+            audio.createOscillator();
+
+        const gain =
+            audio.createGain();
+
+
+        oscillator.type='sine';
+
+        oscillator.frequency.setValueAtTime(
+            250,
+            audio.currentTime
+        );
+
+        oscillator.frequency.exponentialRampToValueAtTime(
+            80,
+            audio.currentTime + .25
+        );
+
+
+        gain.gain.setValueAtTime(
+            .12,
+            audio.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            .001,
+            audio.currentTime + .25
+        );
+
+
+        oscillator.connect(gain);
+
+        gain.connect(audio.destination);
+
+
+        oscillator.start();
+
+        oscillator.stop(
+            audio.currentTime + .25
+        );
+
+    }
+
+    catch(e){
+
+        /* لو المتصفح منع الصوت، الموقع يشتغل عادي */
+
+    }
+
+}
+
 </script>
 
+
 </body>
+
 </html>
